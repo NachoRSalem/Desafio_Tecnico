@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+  background-color: black;
+  
+}
+
+
+
+/*HOMEPAGE */ 
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.home-container h1 {
+  color: blue;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem; 
+}
+
+.nav-button {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2rem; 
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-button:hover {
+  background-color: darkblue;
+  transform: scale(1.05); 
+}
+
+.nav-button:focus {
+  outline: none; 
+}
+
+
+
+
+
+/*ADMINPAGE*/
+
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #000000; 
+  min-height: 100vh; 
+  color: #fff; 
+}
+
+h1.text-center {
+  color: #00f; 
+  margin-bottom: 20px;
+}
+
+p.text-center {
+  color: #fff; 
+  margin-bottom: 20px;
+}
+
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #000000; 
+  min-height: 100vh; 
+  color: #fff; 
+}
+
+h1.text-center {
+  color: #00f;
+  margin-bottom: 20px;
+}
+
+p.text-center {
+  color: #fff; 
+  margin-bottom: 20px;
+}
+
+
+
+
+
+/* USUARIOS */
+
+.table {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); 
+  gap: 1px; 
+  background-color: #333;
+  color: #fff; 
+  border-collapse: collapse; 
+}
+
+.table .header {
+  display: contents;
+}
+
+.table .header div {
+  background-color: #00f; 
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.table .header div {
+  border: 1px solid #444; 
+}
+
+.table .body {
+  display: contents; 
+}
+
+.table div {
+  padding: 10px;
+  border: 1px solid #444; 
+  text-align: center;
+}
+
+.table div:nth-child(odd) {
+  background-color: #444;
+}
+
+.table div:nth-child(even) {
+  background-color: #333; 
+}
+
+.table div:hover {
+  background-color: #555;
+}
+
+
+
+
+
+
+/*USERPAGE*/
+
+.text-center {
+  text-align: center;
+}
+
+.text-blue {
+  color: blue;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+}
+
+
+
+
+
+  /* LOGINPAGE */ 
+  /* REGISTRATIONPAGE */ 
+
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 600px; 
+  padding: 20px;
+  background-color: #000000;
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #00f; 
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.form-group label {
+  color: #fff; 
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control, .form-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #fff; 
+  background-color: #444; 
+}
+
+.form-control::placeholder, .form-select option {
+  color: #aaa; 
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #00f;
+  outline: none;
+}
+
+.password-toggle {
+  color: #00f; 
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.btn-primary {
+  background-color: #00f; 
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-right: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #0000cc; 
+  transform: scale(1.05); 
+}
+
+.btn-secondary {
+  background-color: #555; 
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #333; 
+  transform: scale(1.05); 
+}
+
+
+.error-message {
+  color: red;
+  font-size: 0.875rem; 
+  margin-top: 0.25rem; 
+}
+
+
+
+/*////////////*/
