@@ -28,15 +28,18 @@ const LoginPage = () => {
   // Manejar el envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    const email = formData.email;  
+    const password = formData.password;
     try {
       const response = await fetch('http://localhost:3001/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ email, password }),
+        credentials: 'include' // Importante para enviar las cookies
       });
+     
     
       if (response.ok) {
         const data = await response.json();

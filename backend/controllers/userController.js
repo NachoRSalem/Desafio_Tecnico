@@ -34,21 +34,21 @@ const userController = {
                 const validPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
         
                 if (validPassword) {
-                    // Eliminar la contraseña por seguridad antes de guardarlo en la sesión
+                 
                     delete userToLogin.password;
                     
                     // Guardar al usuario autenticado en la sesión
                     req.session.userLogged = userToLogin;
     
-                    // Si el usuario selecciona 'rememberMe', establecer una cookie
+                    
                     if (req.body.rememberMe) {
                         res.cookie('email', req.body.email, { 
                             maxAge: 1000 * 60 * 60 * 24 * 30, // 30 días
-                            httpOnly: true // Aumenta la seguridad al hacer la cookie accesible solo por el servidor
+                            httpOnly: true 
                         });
                     }
     
-                    // Respuesta exitosa, indicar a qué ruta debe redirigir
+                    // Respuesta exitosa, indica a qué ruta redirigir
                     return res.status(200).json({ 
                         message: userToLogin.rol_tipo === 'Administrador' ? 'Redirigir a /admin' : 'Redirigir a /profile',
                         role: userToLogin.rol_tipo 
@@ -77,15 +77,16 @@ const userController = {
         res.json({ user: req.session.userLogged }); 
     },
     checkAuth: (req, res) => {
-        if (req.session && req.session.userLogged) { // Verifica si hay una sesión activa
+        console.log(req.session); 
+        if (req.session && req.session.userLogged) {
           res.json({
             authenticated: true,
-            role: req.session.userLogged.rol_tipo // Devuelve el rol del usuario
+            role: req.session.userLogged.rol_tipo
           });
         } else {
           res.status(401).json({
             authenticated: false,
-            error: 'No estás autenticado.' // Responde con 401 si no hay sesión
+            error: 'No estás autenticado.'
           });
         }
       }

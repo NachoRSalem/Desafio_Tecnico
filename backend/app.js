@@ -8,8 +8,8 @@ const cors = require("cors");
 
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
-app.use(express.json()); // Para solicitudes JSON
-app.use(express.urlencoded({ extended: true })); // Para solicitudes URL-encoded
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); 
 
 app.use(
     session({
@@ -18,8 +18,8 @@ app.use(
         saveUninitialized: true,
         cookie: {
           httpOnly: true,
-          secure: false,   // Si estás en desarrollo, mantenlo en `false`
-          sameSite: 'lax', // Asegura que las cookies se envíen solo en solicitudes del mismo sitio
+          secure: false,  
+          sameSite: 'lax',
         }
     })
 );
@@ -28,12 +28,10 @@ app.use(cookies());
 app.use(userLoggedMiddleware);
 
 
-const corsOptions = {
-    origin: 'http://localhost:3000',
-    credentials: true,
-  };
-  
-  app.use(cors(corsOptions));
+app.use(cors({
+  origin: 'http://localhost:3000', // Origen del frontend
+  credentials: true // Permitir el envío de cookies
+}));
   
 
 //archivos estáticos desde la carpeta public 
